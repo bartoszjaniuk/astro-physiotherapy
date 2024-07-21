@@ -31,7 +31,7 @@ export const Home = () => {
 				</div>
 
 				<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding">
-					<Description text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and " />
+					<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i techniki fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
 				</div>
 
 				<div className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32">
