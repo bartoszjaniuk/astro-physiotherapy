@@ -14,7 +14,7 @@ export const Home = () => {
 	const screenBreakpoint = useWindowUtils();
 
 	return (
-		<main className="w-full min-h-screen h-[calc(100dvh-96px)] relative">
+		<main className="w-full min-h-screen md:min-h-full h-[calc(100dvh-96px)] relative">
 			<div className="h-full w-full flex items-end lg:pl-32 z-10">
 				<img
 					className="w-full h-auto lg:h-[55%] xl:h-[80%] object-contain"
