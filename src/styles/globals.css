@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--bg: white;
+	--textColor: black;
+	--softBg: #f0f0f0;
+	--softTextColor: #626262;
+	--primary: #0097dd;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: #323130;
+	background-color: #d9d9d9;
+}
+
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+	font-family: "Libre Caslon Display", sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+::-moz-selection {
+	/* Code for Firefox */
+	color: var(--bg);
+	background: var(--primary);
+}
+
+::selection {
+	color: var(--bg);
+	background: var(--primary);
+}
+
+@layer components {
+	.screen-h-navbar {
+		height: calc(100vh - 95px);
+	}
+	.social {
+		@apply hidden lg:flex gap-3 flex-1 items-center;
+	}
+
+	.social-mobile {
+		@apply flex gap-3 flex-1 items-center h-28 max-h-16;
+	}
+	.links {
+		@apply hidden lg:flex flex-1 text-base gap-4 justify-end lg:text-xl lg:gap-5 lg:justify-start;
+	}
+
+	.logo {
+		@apply text-2xl lg:text-3xl xl:text-3xl;
+	}
+
+	.burger {
+		@apply flex w-10 h-[30px] lg:hidden flex-col items-end justify-between bg-transparent p-1 cursor-pointer;
+	}
+
+	.bg-before {
+		@apply bg-contactShape absolute bottom-[40%] left-[100%] w-screen lg:w-full  h-[60%] after:content-[''] -z-[1] bg-no-repeat;
+	}
+
+	.video-bg {
+		@apply absolute top-0 left-0 h-full w-full z-[-1] opacity-[0.15] overflow-hidden;
+	}
+
+	.vertical-carousel {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 36px;
+		font-weight: bold;
+		overflow: hidden;
+	}
+
+	.video-content {
+		@apply w-full h-full object-cover;
+	}
+
+	.border-fancy {
+		border-radius: 1rem;
+	}
+
+	.about-abstract-shape {
+		& ::before {
+			@apply content-[''] absolute right-[10%] top-[70%] lg:left-0 lg:top-[40%] lg:right-0 w-full h-[440px] lg:h-full z-[-1] bg-aboutShape bg-no-repeat;
+		}
+	}
+
+	.animation-float {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.cookies {
+		@apply fixed bottom-0 left-0 z-40 shadow-sm bg-white;
+	}
+
+	@keyframes float {
+		0% {
+			transform: translatey(0px);
+		}
+		50% {
+			transform: translatey(-20px);
+		}
+		100% {
+			transform: translatey(0px);
+		}
+	}
+
+	.clipped-bg {
+		background: var(--primary);
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	.bg-shape {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		width: 100%;
+		height: 100%;
+		background: var(--primary);
+		z-index: -1;
+		border-radius: 1rem;
+	}
+	.bg-shape-white {
+		position: absolute;
+		top: 5%;
+		left: -5%;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		z-index: -1;
+		border-radius: 1rem;
+	}
+
+	.primary-selection {
+		::-moz-selection {
+			/* Code for Firefox */
+			color: var(--primary);
+			background: #ffffff;
+		}
+
+		::selection {
+			color: var(--primary);
+			background: #ffffff;
+		}
+	}
+
+	.card-effect {
+		position: absolute;
+		background: white;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			top: -10px;
+			left: -10px;
+		}
+	}
+
+	.card-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: var(--primary);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.opened {
+		overflow-x: hidden;
+		transition: transform 2s ease;
+		&:first-child {
+			transform: translateY(10px) rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			opacity: 0;
+			transition: opacity 0.2s ease, transform 0.2s ease;
+			transform: translateX(0);
+		}
+
+		&:last-child {
+			transform: translateY(-10px) rotate(-45deg);
+		}
+	}
+
+	.line {
+		@apply h-[2px] w-full bg-gray-900;
+		transition: opacity 0.2s 0.2s ease, transform 0.2s 0.2s ease;
+
+		&:nth-child(2) {
+			transition: opacity 0.2s 0.2s ease, transform 0.2s 0.2s ease;
+			width: 60%;
+		}
+	}
+
+	.responsive-padding {
+		@apply px-6 lg:px-12 xl:px-1
+		/* @apply px-6 lg:px-2; */;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-family: "Libre Caslon Display", sans-serif;
+		font-weight: 400;
+		letter-spacing: -0.4px;
+	}
+}
