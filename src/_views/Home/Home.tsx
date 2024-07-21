@@ -14,8 +14,8 @@ export const Home = () => {
 	const screenBreakpoint = useWindowUtils();
 
 	return (
-		<main className="w-full min-h-[100dvh] md:min-h-full h-[calc(100dvh-96px)] relative">
-			<div className="h-full w-full flex items-end lg:pl-32 z-10">
+		<main className="w-full min-h-screen md:min-h-full h-[calc(100dvh-96px)] relative">
+			<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0">
 				<img
 					className="w-full h-auto lg:h-[55%] xl:h-[80%] object-contain"
 					src="assets/homepage.png"
@@ -30,7 +30,7 @@ export const Home = () => {
 					<Heading title="Fizjoterapia" />
 				</div>
 
-				<div className="bg-transparent absolute w-full top-56 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding">
+				<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding">
 					<Description text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and " />
 				</div>
 
