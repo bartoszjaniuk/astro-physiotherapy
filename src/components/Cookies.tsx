@@ -27,7 +27,7 @@ const Cookies = () => {
 			{!cookie && !isVisible ? (
 				<div className="w-full cookies">
 					<img
-						src="/images/cookies/ggglitch.svg"
+						src="/assets/ggglitch.svg"
 						alt="ggglitch circular shape"
 						className="absolute top-[80%] h-[50%] lg:left-0 lg:top-[50%] z-[49] lg:h-full"
 					/>
