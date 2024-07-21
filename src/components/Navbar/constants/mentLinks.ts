@@ -4,27 +4,23 @@ export const MENU_LINKS = [
 		path: "/",
 	},
 	{
-		title: "Aktualny numer",
-		path: "/aktualny-numer",
+		title: "Cennik",
+		path: "/cennik",
 	},
 	{
-		title: "Archiwum",
-		path: "/archiwum",
+		title: "Oferta",
+		path: "/oferta",
 	},
 	{
-		title: "Polecamy",
-		path: "/polecamy",
-	},
-	{
-		title: "Wydarzenia branżowe",
-		path: "/wydarzenia-branzowe",
-	},
-	{
-		title: "Reklama",
-		path: "/reklama",
+		title: "O mnie",
+		path: "/o-mnie",
 	},
 	{
 		title: "Kontakt",
 		path: "/kontakt",
+	},
+	{
+		title: "Zabiegi",
+		path: "/zabiegi",
 	},
 ];
