@@ -9,6 +9,9 @@ export default {
 				text: "#323130",
 				bgColor: "#d9d9d9",
 			},
+			fontFamily: {
+				questrial: "Questrial",
+			},
 		},
 	},
 	plugins: [],

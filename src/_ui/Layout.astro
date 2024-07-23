@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import BaseSeo from "./components/BaseSeo.astro";
 import Cookies from "../components/Cookies";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 interface Props {
 	title: string;
@@ -30,7 +31,7 @@ const { title, description } = Astro.props;
 			<Navbar client:load />
 			<div class="pt-[96px] min-h-screen h-full"><slot /></div>
 			<Cookies client:load />
-			<!-- <Footer client:load /> -->
+			<Footer client:load />
 		</div>
 	</body>
 </html>

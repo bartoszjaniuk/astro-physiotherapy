@@ -23,4 +23,8 @@ export const MENU_LINKS = [
 		title: "Zabiegi",
 		path: "/zabiegi",
 	},
+	{
+		title: "Przed wizytą",
+		path: "/przed-wizyta",
+	},
 ];

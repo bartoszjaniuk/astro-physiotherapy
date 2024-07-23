@@ -16,7 +16,6 @@ const ResponsiveLinksWithHamburger = () => {
 	const variants: Variants = {
 		hidden: {
 			x: "300%",
-
 			height: 0,
 			transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.65 },
 		},
@@ -52,6 +51,10 @@ const ResponsiveLinksWithHamburger = () => {
 						</a>
 					);
 				})}
+				<div className="absolute top-[60%] flex md:flex gap-8">
+					<img width={32} src="/assets/ig.svg" alt="Instagram Profile" />
+					<img width={32} src="/assets/fb.svg" alt="Facebook Profile" />
+				</div>
 			</motion.div>
 		</>
 	);

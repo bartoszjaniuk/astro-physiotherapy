@@ -4,8 +4,8 @@ import ResponsiveLinks from "./components/ResponsiveLinks";
 
 const Navbar = () => {
 	return (
-		<div className="bg-transparent  w-full fixed z-50 ">
-			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16">
+		<div className="bg-transparent w-full fixed z-50 ">
+			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16 relative ">
 				<a href="/">
 					<img
 						src="/assets/logo.png"
@@ -14,6 +14,10 @@ const Navbar = () => {
 					/>
 				</a>
 				<ResponsiveLinks />
+				<div className="hidden absolute top-0 -right-32 md:flex gap-4  h-[96px]">
+					<img width={24} src="/assets/ig.svg" alt="Instagram Profile" />
+					<img width={24} src="/assets/fb.svg" alt="Facebook Profile" />
+				</div>
 				<div className="links">
 					{MENU_LINKS.map((link, index) => {
 						return (
