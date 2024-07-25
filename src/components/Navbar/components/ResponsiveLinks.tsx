@@ -51,7 +51,7 @@ const ResponsiveLinksWithHamburger = () => {
 						</a>
 					);
 				})}
-				<div className="absolute top-[60%] flex md:flex gap-8">
+				<div className="flex md:flex gap-8">
 					<img width={32} src="/assets/ig.svg" alt="Instagram Profile" />
 					<img width={32} src="/assets/fb.svg" alt="Facebook Profile" />
 				</div>

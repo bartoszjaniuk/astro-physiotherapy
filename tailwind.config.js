@@ -11,6 +11,11 @@ export default {
 			},
 			fontFamily: {
 				questrial: "Questrial",
+				lct: "Libre Caslon Text",
+			},
+			backgroundImage: {
+				"hero-pattern":
+					"url('https://cdn.pixabay.com/photo/2016/08/28/01/37/fitness-1625279_1280.jpg')",
 			},
 		},
 	},

@@ -1,0 +1,12 @@
+---
+import Layout from "../_ui/Layout.astro";
+import { Home } from "../_views/Home/Home";
+import { PriceList } from "../_views/PriceList/PriceList";
+---
+
+<Layout
+	title="Trębacz Fizjoterapia- Cennik"
+	description="Trębacz Fizjoterapia - cennik uslug"
+>
+	<PriceList client:load />
+</Layout>
