@@ -1,3 +1,4 @@
+import { ScrollDown } from "../../_ui/components/ScrollDown/ScrollDown";
 import { Header } from "../../components/Header/Header";
 import { useWindowUtils } from "./hooks/useWindowUtils";
 
@@ -36,7 +37,6 @@ const Card = ({
 
 export const Home = () => {
 	const screenBreakpoint = useWindowUtils();
-	console.log({ screenBreakpoint });
 
 	return (
 		<>
@@ -71,9 +71,18 @@ export const Home = () => {
 						/>
 					</div>
 				</div>
+				<div className="hidden xl:block absolute bottom-[20%] right-[20%]">
+					<ScrollDown
+						onClick={() => {
+							const element = document.getElementById("przed-wizyta");
+							if (!element) return;
+							element.scrollIntoView({ behavior: "smooth" });
+						}}
+					/>
+				</div>
 			</main>
 
-			<div className="w-full flex flex-col h-full ">
+			<div className="w-full flex flex-col h-full" id="przed-wizyta">
 				<Header title="Przed wizytą" />
 				<div className="container  rounded-lg responsive-padding mx-auto flex flex-wrap gap-12 py-4 md:py-32 justify-center  items-center">
 					<Card imageSrc="assets/cd.png" description="Wyniki badań" />

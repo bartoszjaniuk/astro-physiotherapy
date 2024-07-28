@@ -6,47 +6,44 @@ type PriceList = {
 	description?: string;
 };
 
+// Terapia manualna 120 zł
+// (Krótki opis, czas trwania terapii 50min)
+
+// 	⁃	Masaż 120 zł
+// Krótki opis
+
+// 	⁃	drenaż limfatyczny cena/czas trwania
+
+// 	⁃	Elektrostymulacja za pomocą urządzenia compex cena/czas trwania
+
+// 	⁃	fizjoterapia w domu pacjenta 180zl
+
 const PRICE_LIST: PriceList[] = [
 	{
-		title: "Osteopatia 40 min",
-		price: "200 zł",
+		title: "Terapia manualna 50 min",
+		price: "120 zł",
 		description:
-			"terapia strukturalna, terapia trzewna, terapia czaszkowo-krzyżowa",
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit doloremque fugiat beatae at architecto?",
 	},
 	{
-		title: "Fizjoterapia pediatryczna 45 min",
-		price: "200 zł",
-		description:
-			"Instruktarz pielęgnacji, terapia NDT-Bobath, ocena rozwoju niemowląt, kinesiotaping",
+		title: "Masaż (?) min",
+		price: "120 zł",
+		description: "rozluźnianie mięśni oraz powięzi",
 	},
 	{
-		title: "Stała terapia NDT-Bobath 45 min",
-		price: "180 zł",
+		title: "Drenaż limfatyczn (?) min",
+		price: "(?) zł",
 		description: "",
 	},
 	{
-		title: "Diagnostyka metodą Prechtla",
-		price: "200 zł",
-		description:
-			"W celu umówienia się wymagany kontakt mailowy lub przez Messenger.",
+		title: "Elektrostymulacja za pomocą urządzenia compex (?) min",
+		price: "(?) zł",
+		description: "urządzenia compex zapewnia elektrostymulacje co pomaga w...",
 	},
 	{
-		title: "PhysioKobido - 90 min",
-		price: "300 zł",
-		description:
-			"Zabieg PhysioKobido składa się zarówno z masażu liftingującego twarzy, jak i opracowania największych napięć na ciele za pomocą technik fizjoterapeutycznych. Poprzez pracę na różnych obszarach ciała eliminuje się zaburzenia, które mają odzwierciedlenie w wyglądzie twarzy. Lifting na twarzy to elementy terapii rehabilitacji twarzy, terapii mięśniowo-powięziowej, terapii punktów spustowych czy masażu japońskiego. Zabieg dobierany jest indywidualnie, pod dany problem pacjenta. Efekty są jeszcze bardziej spektakularne, niż tylko po masażu na twarzy.",
-	},
-	{
-		title: "Kobido - 60 min",
-		price: "200 zł",
-		description:
-			"Masaż kobido to najpopularniejszy masaż liftingujący twarzy. Jest to intensywna terapia manualna, która poprzez rozluźnianie głębokich tkanek wpływa na efekt zmniejszenia widoczności zmarszczek oraz poprawy owalu twarzy.",
-	},
-	{
-		title: "Fizjoterapia Stomatologiczna - 45 min",
-		price: "200 zł",
-		description:
-			"Borykasz się z bruksizmem, zaciskaniem szczęki lub bólem żwaczy? Słyszysz trzaskania, chrupania i przeskakiwania podczas otwierania buzi? A może masz bóle głowy? Jeśli tak, to ta terapia jest właśnie dla Ciebie. Fizjoterapia stomatologiczna umożliwia zniwelowanie dolegliwości związanych z nieprawidłową pracą stawów skroniowo-żuchwowych. Odbywa się to przy pomocy technik relaksacji okolic stawu i mięśni narządu żucia. Terapia nie kończy się tylko w okolicy problemu, ale fizjoterapeuta patrzy na problem całościowo, szukając przyczyny powstania problemu, a nie tylko niwelowaniu jego objawów. Na pierwszej wizycie wykonywany jest dokładny wywiad i terapia. Ilość spotkań zależna jest od stanu zdrowia danego pacjenta.",
+		title: "Fizjoterapia w domu pacjenta",
+		price: "180 zł",
+		description: "fizjoterapia z dojazdem do domu pacjenta",
 	},
 ];
 

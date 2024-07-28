@@ -8,20 +8,16 @@ export const MENU_LINKS = [
 		path: "/cennik",
 	},
 	{
+		title: "Kontakt",
+		path: "/kontakt",
+	},
+	{
 		title: "Oferta",
 		path: "/oferta",
 	},
 	{
 		title: "O mnie",
 		path: "/o-mnie",
-	},
-	{
-		title: "Kontakt",
-		path: "/kontakt",
-	},
-	{
-		title: "Zabiegi",
-		path: "/zabiegi",
 	},
 	{
 		title: "Przed wizytą",

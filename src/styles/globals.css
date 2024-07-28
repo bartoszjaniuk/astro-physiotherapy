@@ -46,6 +46,89 @@ a {
 }
 
 @layer components {
+	.video-bg {
+		@apply absolute top-0 left-0 h-full w-full overflow-hidden bg-white;
+	}
+
+	.video-content {
+		@apply w-full h-full object-cover;
+	}
+
+	.scrolldown {
+		@apply relative cursor-pointer mb-4 rounded-full box-border w-[40px] h-[60px] border-2 border-primary text-primary;
+	}
+
+	.scrolldown::before {
+		@apply absolute bg-current rounded-full box-border;
+		content: "";
+		width: 6px;
+		height: 6px;
+		bottom: 30px;
+		left: 50%;
+		margin-left: -3px;
+		animation: scrolldown-anim 2s infinite;
+		box-shadow: 0px -5px 3px 1px rgba(42, 84, 112, 0.4);
+	}
+
+	@keyframes scrolldown-anim {
+		0% {
+			opacity: 0;
+			height: 6px;
+		}
+
+		40% {
+			opacity: 1;
+			height: 10px;
+		}
+
+		80% {
+			transform: translate(0, 20px);
+			height: 10px;
+			opacity: 0;
+		}
+
+		100% {
+			height: 3px;
+			opacity: 0;
+		}
+	}
+
+	.chevrons {
+		@apply flex flex-col items-center;
+		padding: 6px 0 0 0;
+		margin-left: -2px;
+		margin-top: 48px;
+		width: 30px;
+	}
+
+	.chevrondown {
+		@apply relative inline-block;
+		border: solid var(--primary);
+		border-width: 0 3px 3px 0;
+		width: 10px;
+		height: 10px;
+		margin-top: -6px;
+		transform: rotate(45deg);
+	}
+
+	.chevrondown:nth-child(odd) {
+		animation: pulse54012 500ms ease infinite alternate;
+	}
+
+	.chevrondown:nth-child(even) {
+		animation: pulse54012 500ms ease infinite alternate 250ms;
+	}
+
+	@keyframes pulse54012 {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 0.5;
+		}
+	}
+
 	.screen-h-navbar {
 		height: calc(100vh - 95px);
 	}

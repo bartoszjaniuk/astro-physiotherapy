@@ -1,0 +1,8 @@
+---
+import Navbar from "./Navbar";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<Navbar client:load currentPath={currentPath} />

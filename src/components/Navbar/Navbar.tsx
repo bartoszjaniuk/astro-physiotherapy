@@ -2,7 +2,14 @@ import * as React from "react";
 import { MENU_LINKS } from "./constants/mentLinks";
 import ResponsiveLinks from "./components/ResponsiveLinks";
 
-const Navbar = () => {
+type Props = {
+	currentPath: string;
+};
+
+const makePathFromLink = (path: string) => path.slice(1).replace(" ", "-");
+
+const Navbar = ({ currentPath }: Props) => {
+	console.log(currentPath, "currentPath");
 	return (
 		<div className="bg-bgColor w-full fixed z-50 ">
 			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16 relative ">
@@ -17,9 +24,12 @@ const Navbar = () => {
 
 				<div className="links">
 					{MENU_LINKS.map((link, index) => {
+						const isActive = currentPath === makePathFromLink(link.path);
 						return (
 							<a
-								className="relative text-xl md:text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center whitespace-nowrap font-thin"
+								className={`relative text-xl md:text-2xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center whitespace-nowrap  ${
+									isActive ? "text-primary" : null
+								}`}
 								key={index}
 								href={link.path}
 							>
