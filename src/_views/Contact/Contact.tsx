@@ -1,4 +1,7 @@
 import { Header } from "../../components/Header/Header";
+import { ScaleUp } from "../../utils/animations/ScaleUp";
+import { SlideX } from "../../utils/animations/SlideX";
+import { SlideY } from "../../utils/animations/SlideY";
 
 const Map = () => (
 	<iframe
@@ -55,46 +58,50 @@ export const Contact = () => {
 			<section className="container responsive-padding mx-auto h-full">
 				<Header title="Kontakt" />
 				<div className="h-full flex flex-col-reverse md:flex-row">
-					<div className="h-full w-full flex flex-col gap-8 mt-4 md:mt-0">
-						<p className="text-3xl">
-							Czy chcesz pozbyć się bólu i odzyskać pełną sprawność?
-							Potrzebujesz wsparcia w rehabilitacji po kontuzji? Masz pytania
-							dotyczące ćwiczeń lub terapii? Śmiało, napisz do mnie! Odpowiem
-							tak szybko, jak to możliwe i pomogę Ci wrócić do pełni zdrowia.
-						</p>
+					<SlideX from="left">
+						<div className="h-full w-full flex flex-col gap-8 mt-4 md:mt-0">
+							<p className="text-3xl">
+								Czy chcesz pozbyć się bólu i odzyskać pełną sprawność?
+								Potrzebujesz wsparcia w rehabilitacji po kontuzji? Masz pytania
+								dotyczące ćwiczeń lub terapii? Śmiało, napisz do mnie! Odpowiem
+								tak szybko, jak to możliwe i pomogę Ci wrócić do pełni zdrowia.
+							</p>
 
-						<List
-							title="Dane kontaktowe:"
-							items={[
-								"Akademia Fitness",
-								"ul. Ocicka 4",
-								"47-400 Racibórz",
-								"Numer telefonu",
-								"+ 48 515 693 553",
-							]}
-						/>
-						<SocialMedia />
+							<List
+								title="Dane kontaktowe:"
+								items={[
+									"Akademia Fitness",
+									"ul. Ocicka 4",
+									"47-400 Racibórz",
+									"Numer telefonu",
+									"+ 48 515 693 553",
+								]}
+							/>
+							<SocialMedia />
 
-						<div className="flex flex-col gap-2">
-							<h5 className="text-4xl font-semibold pb-2">Współpracuję z:</h5>
-							<a
-								style={{ paddingTop: "1rem" }}
-								href="https://akademia-fitness.eu"
-							>
-								<img src="/assets/akademia_fitness.png" alt="logo" />
-							</a>
+							<div className="flex flex-col gap-2">
+								<h5 className="text-4xl font-semibold pb-2">Współpracuję z:</h5>
+								<a
+									style={{ paddingTop: "1rem" }}
+									href="https://akademia-fitness.eu"
+								>
+									<img src="/assets/akademia_fitness.png" alt="logo" />
+								</a>
+							</div>
 						</div>
-					</div>
-					<div>
+					</SlideX>
+					<ScaleUp>
 						<img
 							className="rounded-lg"
 							src="https://cdn.pixabay.com/photo/2021/05/29/01/55/physical-therapy-6292316_1280.jpg"
 							alt="Zdjęcie męzczyzny"
 						/>
-					</div>
+					</ScaleUp>
 				</div>
 			</section>
-			<Map />
+			<SlideY from="bottom" duration={0.6}>
+				<Map />
+			</SlideY>
 		</main>
 	);
 };

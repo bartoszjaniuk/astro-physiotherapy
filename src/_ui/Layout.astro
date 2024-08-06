@@ -1,7 +1,6 @@
 ---
 import "../styles/globals.css";
 import BaseSeo from "./components/BaseSeo.astro";
-import Cookies from "../components/Cookies";
 import Footer from "../components/Footer/Footer";
 import Nav from "../components/Navbar/Nav.astro";
 
@@ -29,7 +28,6 @@ const { title, description } = Astro.props;
 		<div class="min-h-screen">
 			<Nav />
 			<div class="pt-[96px] min-h-screen h-full"><slot /></div>
-			<Cookies client:load />
 			<Footer client:load />
 		</div>
 	</body>

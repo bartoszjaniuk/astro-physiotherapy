@@ -78,23 +78,10 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="w-full text-white lg:h-16 flex lg:items-center py-4 bg-primary">
-				<div className="container mx-auto responsive-padding flex flex-col lg:flex-row lg:items-center justify-between gap-2 bg-inherit">
+				<div className="container mx-auto responsive-padding flex  justify-center bg-inherit">
 					<h5 className="text-xl sm:text-base 2xl:text-2xl font-light bg-inherit font-questrial">
 						© 2024 Trębacz Fizjoterapia
 					</h5>
-					<div className="flex flex-col lg:flex-row text-xl sm:text-base 2xl:text-2xl  font-light gap-2 h-full hover:cursor-pointer bg-inherit">
-						<a
-							className=" lg:border-r-[1px] lg:border-r-white lg:pr-2 bg-inherit font-questrial"
-							href="/"
-							target="_blank"
-						>
-							Regulamin i RODO
-						</a>
-
-						<a className="bg-inherit font-questrial" href="/cookies">
-							Polityka prywatności i cookies
-						</a>
-					</div>
 				</div>
 			</div>
 		</footer>
