@@ -1,8 +1,7 @@
-import { useRef } from "react";
 import { ScrollDown } from "../../_ui/components/ScrollDown/ScrollDown";
 import { Header } from "../../components/Header/Header";
 import { useWindowUtils } from "./hooks/useWindowUtils";
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ScaleUp } from "../../utils/animations/ScaleUp";
 
 const container = {
@@ -26,11 +25,11 @@ const Heading = ({
 }) => {
 	const slide = slideFrom === "left" ? -300 : 300;
 	const variants: Variants = {
-		hidden: { opacity: 0, scale: 0, transform: `translateX(${slide}px)` },
+		hidden: { opacity: 0, scale: 0, x: slide },
 		visible: {
 			opacity: 1,
 			scale: 1,
-			transform: "none",
+			x: 0,
 			transition: {
 				duration: 0.9,
 				ease: [0.17, 0.55, 0.55, 1],
@@ -116,16 +115,16 @@ export const Home = () => {
 					</div>
 
 					<div className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32">
-						<ScaleUp>
-							<img
-								className="w-full h-auto bg-transparent "
-								src={`assets/${
-									screenBreakpoint === "md" || screenBreakpoint === "lg"
-										? "napiszdomniertl"
-										: "napiszdomnieltr"
-								}.png`}
-							/>
-						</ScaleUp>
+						{/* <ScaleUp> */}
+						<img
+							className="w-full h-auto bg-transparent "
+							src={`assets/${
+								screenBreakpoint === "md" || screenBreakpoint === "lg"
+									? "napiszdomniertl"
+									: "napiszdomnieltr"
+							}.png`}
+						/>
+						{/* </ScaleUp> */}
 					</div>
 				</div>
 				<div className="hidden xl:block absolute bottom-[20%] right-[20%]">
