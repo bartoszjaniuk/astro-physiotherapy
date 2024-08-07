@@ -1,11 +1,21 @@
 import { type Variants, motion } from "framer-motion";
 import type { PropsWithChildren } from "react";
+import { MotionComponent } from "./MotionComponent";
+
+type Props = {
+	from?: "bottom" | "top";
+	duration?: number;
+	className?: string;
+	component?: React.ElementType;
+};
 
 export const SlideY = ({
 	children,
 	from = "bottom",
 	duration = 0.9,
-}: PropsWithChildren<{ from?: "bottom" | "top"; duration?: number }>) => {
+	className,
+	component,
+}: PropsWithChildren<Props>) => {
 	const slide = from === "bottom" ? 300 : -300;
 	const variants: Variants = {
 		hidden: { opacity: 1, scale: 0, transform: `translateY(${slide}px)` },
@@ -20,13 +30,15 @@ export const SlideY = ({
 	};
 
 	return (
-		<motion.div
+		<MotionComponent
+			as={component}
+			className={className}
 			viewport={{ once: true }}
 			variants={variants}
 			initial="hidden"
 			whileInView="visible"
 		>
 			{children}
-		</motion.div>
+		</MotionComponent>
 	);
 };

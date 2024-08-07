@@ -1,6 +1,7 @@
 import * as React from "react";
 import { MENU_LINKS } from "./constants/mentLinks";
-import ResponsiveLinks from "./components/ResponsiveLinks";
+import { ResponsiveLinks } from "./components/ResponsiveLinks";
+import { motion, type Variants } from "framer-motion";
 
 type Props = {
 	currentPath: string;
@@ -8,10 +9,24 @@ type Props = {
 
 const makePathFromLink = (path: string) => path.slice(1).replace(" ", "-");
 
+const scrollVariant: Variants = {
+	active: {
+		background: "#d9d9d990",
+		transition: {
+			delay: 0.1,
+		},
+	},
+	inactive: {
+		background: "#d9d9d9",
+		transition: {
+			delay: 0.1,
+		},
+	},
+};
+
 const Navbar = ({ currentPath }: Props) => {
-	console.log(currentPath, "currentPath");
 	return (
-		<div className="bg-bgColor w-full fixed z-50 ">
+		<div className="bg-bgColor w-full fixed z-50">
 			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16 relative ">
 				<a href="/">
 					<img
@@ -21,7 +36,6 @@ const Navbar = ({ currentPath }: Props) => {
 					/>
 				</a>
 				<ResponsiveLinks />
-
 				<div className="links">
 					{MENU_LINKS.map((link, index) => {
 						const isActive = currentPath === makePathFromLink(link.path);

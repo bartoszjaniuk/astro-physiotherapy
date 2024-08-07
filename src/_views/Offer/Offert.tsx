@@ -1,4 +1,6 @@
 import { Header } from "../../components/Header/Header";
+import { SlideX } from "../../utils/animations/SlideX";
+import { SlideY } from "../../utils/animations/SlideY";
 
 type Props = {
 	sectionTitle: string;
@@ -17,16 +19,16 @@ const Section = ({
 }: Props) => {
 	return (
 		<section className="flex flex-col">
-			<div className="flex flex-col gap-4  p-4">
+			<SlideX className="flex flex-col gap-4 p-4">
 				<h1 className="text-5xl">{sectionTitle}</h1>
 				<p className="text-2xl">{sectionDesc}</p>
-			</div>
+			</SlideX>
 			<div
 				className={`flex flex-col md:flex-row ${
 					videoPlacement === "left" ? "md:flex-row-reverse" : null
 				}`}
 			>
-				<div className="w-full p-4">
+				<SlideY className="w-full p-4">
 					<p>{listTitle}</p>
 					<ul className="list-disc p-4">
 						{items.map((item, index) => (
@@ -35,15 +37,15 @@ const Section = ({
 							</li>
 						))}
 					</ul>
-				</div>
-				<div className="w-full h-[450px] relative">
+				</SlideY>
+				<SlideX from="right" className="w-full h-[450px] relative">
 					<div className="video-bg rounded-lg bg-white opacity-100 z-10">
 						<video className="video-content" muted loop autoPlay controls>
 							<source src="assets/videos/vid.mp4" type="video/mp4" />
 							Przeglądarka nie jest wspierana.
 						</video>
 					</div>
-				</div>
+				</SlideX>
 			</div>
 		</section>
 	);
@@ -121,7 +123,6 @@ export const Offer = () => {
 					]}
 				/>
 			</div>
-			{/* <img className="" src="/assets/ccircle.svg" /> */}
 		</main>
 	);
 };

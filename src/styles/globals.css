@@ -50,6 +50,10 @@ a {
 		@apply absolute top-0 left-0 h-full w-full overflow-hidden bg-white;
 	}
 
+	.bg-before {
+		@apply bg-circleShape absolute bottom-[40%] left-[100%] w-screen lg:w-full h-[60%] after:content-[''] -z-[1] bg-no-repeat;
+	}
+
 	.video-content {
 		@apply w-full h-full object-cover;
 	}
@@ -152,7 +156,7 @@ a {
 	}
 
 	.bg-before {
-		@apply bg-contactShape absolute bottom-[40%] left-[100%] w-screen lg:w-full  h-[60%] after:content-[''] -z-[1] bg-no-repeat;
+		@apply bg-circleShape absolute bottom-[40%] left-[100%] w-screen lg:w-full  h-[60%] after:content-[''] -z-[1] bg-no-repeat;
 	}
 
 	.video-bg {

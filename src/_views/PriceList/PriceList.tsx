@@ -1,3 +1,4 @@
+import { motion, type Variants } from "framer-motion";
 import { Header } from "../../components/Header/Header";
 
 type PriceList = {
@@ -49,7 +50,7 @@ const PRICE_LIST: PriceList[] = [
 
 const PriceListItem = ({ price, title, description }: PriceList) => {
 	return (
-		<div className="flex flex-col gap-7">
+		<motion.div variants={item} className="flex flex-col gap-7">
 			<div className="flex gap-4">
 				<div className="flex gap-4 w-full items-center">
 					<h3 className="min-w-fit font-bold font-lct text-xl">{title}</h3>
@@ -58,7 +59,7 @@ const PriceListItem = ({ price, title, description }: PriceList) => {
 				<p className="min-w-fit font-bold font-lct text-xl">{price}</p>
 			</div>
 			<p className="font-lct">{description}</p>
-		</div>
+		</motion.div>
 	);
 };
 
@@ -67,12 +68,37 @@ export const PriceList = () => {
 		<main className="w-full min-h-screen md:min-h-full max-h-full relative">
 			<div className="container responsive-padding mx-auto pb-32">
 				<Header title="Cennik" />
-				<section className="flex flex-col gap-8">
+				<motion.section
+					className="flex flex-col gap-8"
+					variants={container}
+					initial="hidden"
+					animate="visible"
+				>
 					{PRICE_LIST.map((item, index) => (
 						<PriceListItem key={index} {...item} />
 					))}
-				</section>
+				</motion.section>
 			</div>
 		</main>
 	);
+};
+
+const container: Variants = {
+	hidden: { opacity: 1, scale: 0 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const item: Variants = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
 };

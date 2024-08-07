@@ -3,18 +3,21 @@ import { Header } from "../../components/Header/Header";
 import { useWindowUtils } from "./hooks/useWindowUtils";
 import { motion, type Variants } from "framer-motion";
 import { ScaleUp } from "../../utils/animations/ScaleUp";
+import { AnimatedList } from "../../utils/animations/AnimatedList";
+import { SlideX } from "../../utils/animations/SlideX";
 
-const container = {
-	hidden: { opacity: 1, scale: 0 },
-	visible: {
-		opacity: 1,
-		scale: 1,
-		transition: {
-			delayChildren: 0.3,
-			staggerChildren: 0.2,
-		},
-	},
+export type Item = {
+	id: number;
+	imageSrc: string;
+	description: string;
 };
+
+const items: Item[] = [
+	{ id: 1, imageSrc: "assets/cd.png", description: "Wyniki badań" },
+	{ id: 2, imageSrc: "assets/towel.png", description: "Ręcznik" },
+	{ id: 3, imageSrc: "assets/cloth.png", description: "Wygodny strój" },
+	{ id: 4, imageSrc: "assets/shoe.png", description: "Obuwie zmienne" },
+];
 
 const Heading = ({
 	title,
@@ -54,30 +57,6 @@ const Description = ({ text }: { text: string }) => (
 	<p className="text-xl md:text-3xl xl:text-2xl bg-transparent">{text}</p>
 );
 
-const Card = ({
-	isInverted = false,
-	imageSrc,
-	description,
-}: {
-	isInverted?: boolean;
-	imageSrc: string;
-	description: string;
-}) => {
-	const styles = `${
-		isInverted ? "bg-primary text-white" : "bg-text text-white md:-rotate-2"
-	}`;
-
-	return (
-		<motion.div
-			variants={item}
-			className={`flex flex-col gap-4 w-full md:w-[272px] lg:w-[400px] lg:h-full h-full md:h-[354px] xl:w-[272px] xl:h-[354px] border rounded-lg p-4 ${styles}`}
-		>
-			<img src={imageSrc} alt="todo" />
-			<p className="text-center text-4xl">{description}</p>
-		</motion.div>
-	);
-};
-
 const item = {
 	hidden: { y: 20, opacity: 0 },
 	visible: {
@@ -94,10 +73,30 @@ export const Home = () => {
 			<main className="w-full min-h-screen h-[calc(100vh-96px)] md:min-h-full max-h-full relative">
 				<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0">
 					<img
-						className="w-full h-auto lg:h-[55%] xl:h-[80%] object-contain"
+						className="w-full h-auto lg:h-[55%] xl:h-[80%] object-contain z-20"
 						src="assets/homepage.png"
 					/>
 				</div>
+				<SlideX
+					from="right"
+					className="absolute top-96 m-auto left-0 right-0 lg:top-[100px] lg:-right-96 w-5/6 lg:w-[700px] h-full"
+				>
+					<motion.img
+						className="w-full z-10"
+						src="/assets/ccircle.svg"
+						initial={{ scale: 1 }}
+						animate={{
+							scale: [1.1, 1.2, 1.1],
+						}}
+						transition={{
+							duration: 10,
+							ease: "linear",
+							repeat: Infinity,
+							stiffness: 40,
+							repeatType: "loop",
+						}}
+					/>
+				</SlideX>
 
 				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent ">
 					<div className="bg-transparent absolute top-5 left-5 lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[25%] responsive-padding">
@@ -115,16 +114,16 @@ export const Home = () => {
 					</div>
 
 					<div className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32">
-						{/* <ScaleUp> */}
-						<img
-							className="w-full h-auto bg-transparent "
-							src={`assets/${
-								screenBreakpoint === "md" || screenBreakpoint === "lg"
-									? "napiszdomniertl"
-									: "napiszdomnieltr"
-							}.png`}
-						/>
-						{/* </ScaleUp> */}
+						<ScaleUp>
+							<img
+								className="w-full h-auto bg-transparent "
+								src={`assets/${
+									screenBreakpoint === "md" || screenBreakpoint === "lg"
+										? "napiszdomniertl"
+										: "napiszdomnieltr"
+								}.png`}
+							/>
+						</ScaleUp>
 					</div>
 				</div>
 				<div className="hidden xl:block absolute bottom-[20%] right-[20%]">
@@ -137,24 +136,14 @@ export const Home = () => {
 					/>
 				</div>
 			</main>
+
 			<div className="w-full flex flex-col h-full" id="przed-wizyta">
 				<Header title="Przed wizytą" />
-				<motion.div
-					className="container rounded-lg responsive-padding mx-auto flex flex-wrap gap-12 py-4 md:py-32 justify-center  items-center"
-					variants={container}
-					initial="hidden"
-					viewport={{ once: true }}
-					whileInView="visible"
-				>
-					<Card imageSrc="assets/cd.png" description="Wyniki badań" />
-					<Card isInverted imageSrc="assets/towel.png" description="Ręcznik" />
-					<Card imageSrc="assets/cloth.png" description="Wygodny strój" />
-					<Card
-						isInverted
-						imageSrc="assets/shoe.png"
-						description="Obuwie zmienne"
-					/>
-				</motion.div>
+				<AnimatedList
+					className="container rounded-lg responsive-padding mx-auto flex flex-wrap gap-12 py-4 md:py-32 justify-center items-center"
+					items={items}
+				/>
+
 				<div className="rounded-lg container responsive-padding mx-auto flex items-center justify-center pb-32">
 					<ScaleUp>
 						<p className="text-2xl md:text-3xl xl:text-4xl p-4">

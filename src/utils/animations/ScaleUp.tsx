@@ -1,7 +1,15 @@
-import { type Variants, motion } from "framer-motion";
+import { type Variants } from "framer-motion";
 import type { PropsWithChildren } from "react";
+import { MotionComponent } from "./MotionComponent";
 
-export const ScaleUp = ({ children }: PropsWithChildren) => {
+export const ScaleUp = ({
+	children,
+	component,
+	className,
+}: PropsWithChildren<{
+	component?: React.ElementType;
+	className?: string;
+}>) => {
 	const variants: Variants = {
 		hidden: { opacity: 1, scale: 0 },
 		visible: {
@@ -14,13 +22,15 @@ export const ScaleUp = ({ children }: PropsWithChildren) => {
 	};
 
 	return (
-		<motion.div
+		<MotionComponent
+			as={component}
+			className={className}
 			viewport={{ once: true }}
 			variants={variants}
 			initial="hidden"
 			whileInView="visible"
 		>
 			{children}
-		</motion.div>
+		</MotionComponent>
 	);
 };
