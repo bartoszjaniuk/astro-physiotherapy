@@ -16,11 +16,11 @@ export const SlideY = ({
 	className,
 	component,
 }: PropsWithChildren<Props>) => {
-	const slide = from === "bottom" ? 300 : -300;
+	const slide = from === "bottom" ? 100 : -100;
 	const variants: Variants = {
-		hidden: { opacity: 1, scale: 0, transform: `translateY(${slide}px)` },
+		hidden: { opacity: 1, scale: 0, y: slide },
 		visible: {
-			transform: "none",
+			y: 0,
 			opacity: 1,
 			scale: 1,
 			transition: {

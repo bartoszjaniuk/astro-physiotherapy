@@ -79,7 +79,7 @@ export const Home = () => {
 				</div>
 				<SlideX
 					from="right"
-					className="absolute top-96 m-auto left-0 right-0 lg:top-[100px] lg:-right-96 w-5/6 lg:w-[700px] h-full"
+					className="absolute top-96 w-5/6 left-0 right-0 mx-auto h-full lg:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto"
 				>
 					<motion.img
 						className="w-full z-10"

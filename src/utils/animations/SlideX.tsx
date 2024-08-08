@@ -16,11 +16,11 @@ export const SlideX = ({
 	className,
 	component = "div",
 }: PropsWithChildren<Props>) => {
-	const slide = from === "left" ? -300 : 300;
+	const slide = from === "left" ? -100 : 100;
 	const variants: Variants = {
-		hidden: { opacity: 1, scale: 0, transform: `translateX(${slide}px)` },
+		hidden: { opacity: 1, scale: 0, x: slide },
 		visible: {
-			transform: "none",
+			x: 0,
 			opacity: 1,
 			scale: 1,
 			transition: {
