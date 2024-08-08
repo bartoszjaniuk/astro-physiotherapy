@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { FACEBOOK_URL, INSTAGRAM_URL } from "../../_constants/socialMedia";
 import { Header } from "../../components/Header/Header";
 import { ScaleUp } from "../../utils/animations/ScaleUp";
 import { SlideX } from "../../utils/animations/SlideX";
@@ -38,16 +40,16 @@ const List = ({ title, items }: ListProps) => {
 const SocialMedia = () => (
 	<div className="flex flex-col">
 		<li className="list-none flex gap-4">
-			<ul>
-				<a href="https://akademia-fitness.eu">
-					<img width={42} src="/assets/ig.svg" alt="Instagram Profile" />
+			<motion.ul whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+				<a href={INSTAGRAM_URL}>
+					<img width={42} src="/assets/ig.svg" alt="Profil Instagram" />
 				</a>
-			</ul>
-			<ul>
-				<a href="https://akademia-fitness.eu">
-					<img width={42} src="/assets/fb.svg" alt="Facebook Profile" />
+			</motion.ul>
+			<motion.ul whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+				<a href={FACEBOOK_URL}>
+					<img width={42} src="/assets/fb.svg" alt="Profile Facebook" />
 				</a>
-			</ul>
+			</motion.ul>
 		</li>
 	</div>
 );
@@ -82,7 +84,7 @@ export const Contact = () => {
 							<div className="flex flex-col gap-2">
 								<h5 className="text-4xl font-semibold pb-2">Współpracuję z:</h5>
 								<a
-									style={{ paddingTop: "1rem" }}
+									className="pt-4 cursor-pointer"
 									href="https://akademia-fitness.eu"
 								>
 									<img src="/assets/akademia_fitness.png" alt="logo" />

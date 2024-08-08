@@ -32,7 +32,7 @@ const PRICE_LIST: PriceList[] = [
 		description: "rozluźnianie mięśni oraz powięzi",
 	},
 	{
-		title: "Drenaż limfatyczn (?) min",
+		title: "Drenaż limfatyczny (?) min",
 		price: "(?) zł",
 		description: "",
 	},

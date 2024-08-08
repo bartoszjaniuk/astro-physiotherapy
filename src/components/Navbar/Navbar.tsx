@@ -2,6 +2,7 @@ import * as React from "react";
 import { MENU_LINKS } from "./constants/mentLinks";
 import { ResponsiveLinks } from "./components/ResponsiveLinks";
 import { motion, type Variants } from "framer-motion";
+import { FACEBOOK_URL, INSTAGRAM_URL } from "../../_constants/socialMedia";
 
 type Props = {
 	currentPath: string;
@@ -52,10 +53,18 @@ const Navbar = ({ currentPath }: Props) => {
 						);
 					})}
 				</div>
-				<div className="hidden lg:flex gap-4  h-[96px]">
-					<img width={24} src="/assets/ig.svg" alt="Instagram Profile" />
-					<img width={24} src="/assets/fb.svg" alt="Facebook Profile" />
-				</div>
+				<ul className="hidden lg:flex gap-4 h-[96px] list-none items-center">
+					<motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+						<a href={INSTAGRAM_URL} className="cursor-pointer">
+							<img width={24} src="/assets/ig.svg" alt="Profil na Instagram" />
+						</a>
+					</motion.li>
+					<motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+						<a href={FACEBOOK_URL} className="cursor-pointer">
+							<img width={24} src="/assets/fb.svg" alt="Profil na Facebook" />
+						</a>
+					</motion.li>
+				</ul>
 			</nav>
 		</div>
 	);

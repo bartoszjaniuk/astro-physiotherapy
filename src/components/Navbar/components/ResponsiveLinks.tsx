@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion, type Variants } from "framer-motion";
 import { MENU_LINKS } from "../constants/mentLinks";
+import { FACEBOOK_URL, INSTAGRAM_URL } from "../../../_constants/socialMedia";
 
 const navigationVariant: Variants = {
 	hidden: {
@@ -86,20 +87,26 @@ const NavigationLink = ({ path, title }: { title: string; path: string }) => {
 };
 
 const SocialIcons = () => (
-	<div className="flex md:flex gap-8">
-		<motion.img
+	<ul className="flex md:flex gap-8 list-none">
+		<motion.li
 			variants={staggerItemVariant}
-			width={32}
-			src="/assets/ig.svg"
-			alt="Instagram Profile"
-		/>
-		<motion.img
+			whileHover={{ scale: 1.1 }}
+			whileTap={{ scale: 0.95 }}
+		>
+			<a href={INSTAGRAM_URL} className="cursor-pointer">
+				<img width={32} src="/assets/ig.svg" alt="Profil na Instagram" />
+			</a>
+		</motion.li>
+		<motion.li
+			whileHover={{ scale: 1.1 }}
+			whileTap={{ scale: 0.95 }}
 			variants={staggerItemVariant}
-			width={32}
-			src="/assets/fb.svg"
-			alt="Facebook Profile"
-		/>
-	</div>
+		>
+			<a href={FACEBOOK_URL} className="cursor-pointer">
+				<img width={32} src="/assets/fb.svg" alt="Profil na Facebook" />
+			</a>
+		</motion.li>
+	</ul>
 );
 
 const NavigationList = ({

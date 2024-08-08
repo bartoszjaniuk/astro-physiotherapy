@@ -4,7 +4,6 @@ import { useWindowUtils } from "./hooks/useWindowUtils";
 import { motion, type Variants } from "framer-motion";
 import { ScaleUp } from "../../utils/animations/ScaleUp";
 import { AnimatedList } from "../../utils/animations/AnimatedList";
-import { SlideX } from "../../utils/animations/SlideX";
 
 export type Item = {
 	id: number;
@@ -77,10 +76,7 @@ export const Home = () => {
 						src="assets/homepage.png"
 					/>
 				</div>
-				<SlideX
-					from="right"
-					className="absolute top-96 w-5/6 left-0 right-0 mx-auto h-full lg:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto"
-				>
+				<div className="absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
 					<motion.img
 						className="w-full z-10"
 						src="/assets/ccircle.svg"
@@ -96,7 +92,7 @@ export const Home = () => {
 							repeatType: "loop",
 						}}
 					/>
-				</SlideX>
+				</div>
 
 				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent ">
 					<div className="bg-transparent absolute top-5 left-5 lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[25%] responsive-padding">
@@ -107,7 +103,7 @@ export const Home = () => {
 						<Heading slideFrom="right" title="Fizjoterapia" />
 					</div>
 
-					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding">
+					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-50">
 						<ScaleUp>
 							<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i techniki fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
 						</ScaleUp>
@@ -126,7 +122,7 @@ export const Home = () => {
 						</ScaleUp>
 					</div>
 				</div>
-				<div className="hidden xl:block absolute bottom-[20%] right-[20%]">
+				<div className="hidden xl:block absolute bottom-[20%] right-[20%] z-50">
 					<ScrollDown
 						onClick={() => {
 							const element = document.getElementById("przed-wizyta");

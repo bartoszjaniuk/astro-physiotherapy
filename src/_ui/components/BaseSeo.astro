@@ -5,9 +5,10 @@ export interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	keywords?: string;
 }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = logo } = Astro.props;
+const { title, description, image = logo, keywords } = Astro.props;
 ---
 
 <link rel="canonical" href={canonicalURL} />
@@ -17,7 +18,7 @@ const { title, description, image = logo } = Astro.props;
 <meta name="description" content={description} />
 <meta
 	name="keywords"
-	content="trębacz fizjoterapia, fizjoterapeuta, fizjo, racibórz, fizjoterapia, bartosz trębacz"
+	content={`trębacz fizjoterapia, fizjoterapeuta, fizjoterapeutra racibórz, fizjo, racibórz, fizjoterapia, bartosz trębacz ${keywords}`}
 />
 
 <meta property="og:type" content="website" />
