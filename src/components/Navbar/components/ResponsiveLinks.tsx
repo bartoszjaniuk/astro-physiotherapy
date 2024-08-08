@@ -117,7 +117,7 @@ const NavigationList = ({
 		initial="hidden"
 		animate={isOpen ? "visible" : "hidden"}
 		variants={navigationVariant}
-		className="text-2xl absolute top-[95px] w-full bg-bgColor left-0 lg:hidden py-8  flex flex-col gap-10 overflow-y-scroll items-center my-auto"
+		className="text-2xl absolute top-[95px] w-full bg-bgColor left-0 lg:hidden py-8  flex flex-col gap-10 overflow-y-scroll items-center my-auto z-50"
 	>
 		{children}
 	</motion.ul>

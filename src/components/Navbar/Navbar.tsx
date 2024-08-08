@@ -28,7 +28,7 @@ const scrollVariant: Variants = {
 const Navbar = ({ currentPath }: Props) => {
 	return (
 		<div className="bg-bgColor w-full fixed z-50">
-			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16 relative ">
+			<nav className="container responsive-padding mx-auto h-24 flex items-center justify-between gap-16 relative z-50 ">
 				<a href="/">
 					<img
 						src="/assets/logo.png"

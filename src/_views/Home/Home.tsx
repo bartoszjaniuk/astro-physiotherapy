@@ -76,7 +76,7 @@ export const Home = () => {
 						src="assets/homepage.png"
 					/>
 				</div>
-				<div className="absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
+				<div className="hidden lg:block absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
 					<motion.img
 						className="w-full z-10"
 						src="/assets/ccircle.svg"
@@ -103,7 +103,7 @@ export const Home = () => {
 						<Heading slideFrom="right" title="Fizjoterapia" />
 					</div>
 
-					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-50">
+					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10">
 						<ScaleUp>
 							<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i techniki fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
 						</ScaleUp>
