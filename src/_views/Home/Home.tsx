@@ -105,7 +105,7 @@ export const Home = () => {
 
 					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10">
 						<ScaleUp>
-							<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i techniki fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
+							<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i zabiegi fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
 						</ScaleUp>
 					</div>
 
@@ -144,9 +144,9 @@ export const Home = () => {
 					<ScaleUp>
 						<p className="text-2xl md:text-3xl xl:text-4xl p-4">
 							Postaraj jak najlepiej przygotować się do wizyty. Zabierz ze sobą
-							badania na plycie CD, lub innym nośniku pamięci. Koniecznie weź ze
-							sobą ręcznik, wygodny strój, który nie będzie krępowal ruchow,
-							oraz obuwie zmienne.
+							badania jeśli jakieś posiadasz. Koniecznie weź ze sobą ręcznik,
+							wygodny strój, który nie będzie krępowal ruchow, oraz obuwie
+							zmienne.
 						</p>
 					</ScaleUp>
 				</div>

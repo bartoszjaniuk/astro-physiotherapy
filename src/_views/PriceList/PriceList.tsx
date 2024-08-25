@@ -21,31 +21,31 @@ type PriceList = {
 
 const PRICE_LIST: PriceList[] = [
 	{
-		title: "Terapia manualna 50 min",
+		title: "Terapia manualna",
 		price: "120 zł",
-		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit doloremque fugiat beatae at architecto?",
+		// description:
+		// 	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit doloremque fugiat beatae at architecto?",
 	},
 	{
-		title: "Masaż (?) min",
+		title: "Masaż",
 		price: "120 zł",
-		description: "rozluźnianie mięśni oraz powięzi",
+		// description: "rozluźnianie mięśni oraz powięzi",
 	},
 	{
-		title: "Drenaż limfatyczny (?) min",
-		price: "(?) zł",
-		description: "",
+		title: "Drenaż limfatyczny (30 min)",
+		price: "60 zł",
+		// description: "",
 	},
 	{
-		title: "Elektrostymulacja za pomocą urządzenia compex (?) min",
-		price: "(?) zł",
-		description: "urządzenia compex zapewnia elektrostymulacje co pomaga w...",
+		title: "Elektrostymulacja",
+		price: "30 zł",
+		// description: "urządzenia compex zapewnia elektrostymulacje co pomaga w...",
 	},
-	{
-		title: "Fizjoterapia w domu pacjenta",
-		price: "180 zł",
-		description: "fizjoterapia z dojazdem do domu pacjenta",
-	},
+	// {
+	// 	title: "Fizjoterapia w domu pacjenta",
+	// 	price: "180 zł",
+	// 	description: "fizjoterapia z dojazdem do domu pacjenta",
+	// },
 ];
 
 const PriceListItem = ({ price, title, description }: PriceList) => {
