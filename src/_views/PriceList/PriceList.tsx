@@ -22,13 +22,13 @@ type PriceList = {
 const PRICE_LIST: PriceList[] = [
 	{
 		title: "Terapia manualna",
-		price: "120 zł",
+		price: "160 zł",
 		// description:
 		// 	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit doloremque fugiat beatae at architecto?",
 	},
 	{
-		title: "Masaż",
-		price: "120 zł",
+		title: "Masaż leczniczy",
+		price: "160 zł",
 		// description: "rozluźnianie mięśni oraz powięzi",
 	},
 	{
@@ -41,11 +41,11 @@ const PRICE_LIST: PriceList[] = [
 		price: "30 zł",
 		// description: "urządzenia compex zapewnia elektrostymulacje co pomaga w...",
 	},
-	// {
-	// 	title: "Fizjoterapia w domu pacjenta",
-	// 	price: "180 zł",
-	// 	description: "fizjoterapia z dojazdem do domu pacjenta",
-	// },
+	{
+		title: "Fizjoterapia w domu pacjenta",
+		price: "od 180 zł",
+		// description: "fizjoterapia z dojazdem do domu pacjenta",
+	},
 ];
 
 const PriceListItem = ({ price, title, description }: PriceList) => {
