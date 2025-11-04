@@ -5,12 +5,14 @@ const FOOTER_CONTACT: ColumnProps = {
 	gridColumn: "1/2",
 	entries: [
 		{
-			type: "normal",
-			content: "Akademia Fitness",
+			type: "link",
+			content: "ul. Ocicka 4, 47-400 Racibórz",
+			link: "/kontakt",
 		},
 		{
-			type: "normal",
-			content: "ul. Ocicka 4, 47-400 Racibórz",
+			type: "link",
+			content: "Domofon nr 2 - 1 piętro",
+			link: "/kontakt",
 		},
 		{
 			type: "normal",
@@ -29,18 +31,18 @@ const FOOTER_OFFERT: ColumnProps = {
 	entries: [
 		{
 			type: "link",
-			content: "Uslugi",
-			link: "/",
+			content: "Usługi",
+			link: "/oferta",
 		},
 		{
 			type: "link",
 			content: "Zabiegi",
-			link: "/",
+			link: "/oferta",
 		},
 		{
 			type: "link",
 			content: "Cennik",
-			link: "/",
+			link: "/cennik",
 		},
 	],
 };
@@ -51,18 +53,8 @@ const FOOTER_ABOUT: ColumnProps = {
 	entries: [
 		{
 			type: "link",
-			content: "Wyksztalcenie",
-			link: "/",
-		},
-		{
-			type: "link",
-			content: "Jak wygląda wizyta",
-			link: "/",
-		},
-		{
-			type: "link",
-			content: "Przed wizytą",
-			link: "/",
+			content: "Wykształcenie",
+			link: "#o-mnie",
 		},
 	],
 };

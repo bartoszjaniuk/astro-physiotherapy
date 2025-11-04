@@ -7,44 +7,26 @@ type PriceList = {
 	description?: string;
 };
 
-// Terapia manualna 120 zł
-// (Krótki opis, czas trwania terapii 50min)
-
-// 	⁃	Masaż 120 zł
-// Krótki opis
-
-// 	⁃	drenaż limfatyczny cena/czas trwania
-
-// 	⁃	Elektrostymulacja za pomocą urządzenia compex cena/czas trwania
-
-// 	⁃	fizjoterapia w domu pacjenta 180zl
-
 const PRICE_LIST: PriceList[] = [
 	{
-		title: "Terapia manualna",
+		title: "Wizyta fizjoterapeutyczna - około 60 min",
 		price: "160 zł",
-		// description:
-		// 	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit doloremque fugiat beatae at architecto?",
 	},
 	{
-		title: "Masaż leczniczy",
+		title: "Masaż leczniczy - około 50 min",
 		price: "160 zł",
-		// description: "rozluźnianie mięśni oraz powięzi",
 	},
 	{
-		title: "Drenaż limfatyczny (30 min)",
+		title: "Drenaż limfatyczny  kończyn dolnych NORMATEC - około 30 min",
 		price: "60 zł",
-		// description: "",
 	},
 	{
 		title: "Elektrostymulacja",
 		price: "30 zł",
-		// description: "urządzenia compex zapewnia elektrostymulacje co pomaga w...",
 	},
 	{
 		title: "Fizjoterapia w domu pacjenta",
-		price: "od 180 zł",
-		// description: "fizjoterapia z dojazdem do domu pacjenta",
+		price: "od 200 zł",
 	},
 ];
 

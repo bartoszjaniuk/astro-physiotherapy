@@ -1,9 +1,10 @@
 import { ScrollDown } from "../../_ui/components/ScrollDown/ScrollDown";
-import { Header } from "../../components/Header/Header";
 import { useWindowUtils } from "./hooks/useWindowUtils";
 import { motion, type Variants } from "framer-motion";
 import { ScaleUp } from "../../utils/animations/ScaleUp";
-import { AnimatedList } from "../../utils/animations/AnimatedList";
+import { Header } from "../../components/Header/Header";
+import { SlideX } from "../../utils/animations/SlideX";
+import { BOOKSY_URL } from "../../_constants/socialMedia";
 
 export type Item = {
 	id: number;
@@ -11,19 +12,12 @@ export type Item = {
 	description: string;
 };
 
-const items: Item[] = [
-	{ id: 1, imageSrc: "assets/cd.png", description: "Wyniki badań" },
-	{ id: 2, imageSrc: "assets/towel.png", description: "Ręcznik" },
-	{ id: 3, imageSrc: "assets/cloth.png", description: "Wygodny strój" },
-	{ id: 4, imageSrc: "assets/shoe.png", description: "Obuwie zmienne" },
-];
-
 const Heading = ({
 	title,
 	slideFrom = "left",
 }: {
 	title: string;
-	slideFrom?: "left" | "right";
+	slideFrom?: "left" | "right" | "none";
 }) => {
 	const slide = slideFrom === "left" ? -300 : 300;
 	const variants: Variants = {
@@ -40,7 +34,11 @@ const Heading = ({
 		},
 	};
 
-	return (
+	return slideFrom === "none" ? (
+		<h1 className="text-7xl md:text-9xl lg:text-9xl xl:text-8xl 2xl:text-9xl z-20">
+			{title}
+		</h1>
+	) : (
 		<motion.h1
 			initial="hidden"
 			animate="visible"
@@ -96,33 +94,42 @@ export const Home = () => {
 
 				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent ">
 					<div className="bg-transparent absolute top-5 left-5 lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[25%] responsive-padding">
-						<Heading title="Trębacz" />
+						<Heading title="Trębacz" slideFrom="none" />
 					</div>
 
 					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-16 2xl:top-[40%] 2xl:right-[10%] responsive-padding">
-						<Heading slideFrom="right" title="Fizjoterapia" />
+						<Heading title="Fizjoterapia" slideFrom="none" />
 					</div>
 
 					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10">
 						<ScaleUp>
-							<Description text="Specjalizuje się w diagnostyce, leczeniu i zapobieganiu problemom ruchowym poprzez terapię manualną, ćwiczenia i zabiegi fizykalne, pomagając pacjentom w poprawie ich mobilności i jakości życia." />
-						</ScaleUp>
-					</div>
-
-					<div className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32">
-						<ScaleUp>
-							<img
-								className="w-full h-auto bg-transparent "
-								src={`assets/${
-									screenBreakpoint === "md" || screenBreakpoint === "lg"
-										? "napiszdomniertl"
-										: "napiszdomnieltr"
-								}.png`}
+							<Description
+								text="Nasze podejście łączy nowoczesną wiedzę medyczną, doświadczenie kliniczne oraz indywidualne podejście do każdego pacjenta.
+Niezależnie od tego,czy zmagasz się z bólem kręgosłupa, wracasz do formy po kontuzji, czy potrzebujesz specjalistycznej terapii - jesteśmy tu, by Ci pomóc."
 							/>
 						</ScaleUp>
 					</div>
+
+					<motion.div
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32 z-50 cursor-pointer "
+					>
+						<ScaleUp>
+							<motion.a href={BOOKSY_URL}>
+								<img
+									className="w-full h-auto bg-transparent z-50"
+									src={`assets/${
+										screenBreakpoint === "md" || screenBreakpoint === "lg"
+											? "napiszdomniertl"
+											: "napiszdomnieltr"
+									}.png`}
+								/>
+							</motion.a>
+						</ScaleUp>
+					</motion.div>
 				</div>
-				<div className="hidden xl:block absolute bottom-[20%] right-[20%] z-50">
+				{/* <div className="hidden xl:block absolute bottom-[20%] right-[20%] z-50">
 					<ScrollDown
 						onClick={() => {
 							const element = document.getElementById("przed-wizyta");
@@ -130,27 +137,37 @@ export const Home = () => {
 							element.scrollIntoView({ behavior: "smooth" });
 						}}
 					/>
-				</div>
+				</div> */}
 			</main>
-
-			<div className="w-full flex flex-col h-full" id="przed-wizyta">
-				<Header title="Przed wizytą" />
-				<AnimatedList
-					className="container rounded-lg responsive-padding mx-auto flex flex-wrap gap-12 py-4 md:py-32 justify-center items-center"
-					items={items}
-				/>
-
-				<div className="rounded-lg container responsive-padding mx-auto flex items-center justify-center pb-32">
-					<ScaleUp>
-						<p className="text-2xl md:text-3xl xl:text-4xl p-4">
-							Postaraj jak najlepiej przygotować się do wizyty. Zabierz ze sobą
-							badania jeśli jakieś posiadasz. Koniecznie weź ze sobą ręcznik,
-							wygodny strój, który nie będzie krępowal ruchow, oraz obuwie
-							zmienne.
-						</p>
-					</ScaleUp>
+			<section className="w-full h-60 shadow-lg">
+				<div className="container responsive-padding mx-auto flex justify-center items-center h-60 ">
+					<blockquote className="text-xl md:text-3xl xl:text-4xl">
+						Każdy pacjent jest inny - dlatego każda terapia jest dopasowana do
+						Ciebie.
+					</blockquote>
 				</div>
-			</div>
+			</section>
+			<section
+				id="o-mnie"
+				className="container responsive-padding mx-auto h-ful pb-32"
+			>
+				<Header title="O mnie" />
+				<div className="h-full flex flex-col-reverse md:flex-row">
+					<SlideX from="left">
+						<div className="h-full w-full flex flex-col gap-8 mt-4 md:mt-0">
+							<p className="text-3xl">
+								Jestem fizjoterapeutą specjalizującym się w pracy z pacjentami
+								ortopedycznymi i sportowcami. W mojej codziennej pracy z
+								pacjentem wykorzystuje techniki dokładnie ukierunkowane na jak
+								najszybsze zniwelowanie dolegliwości i przyspieszenie
+								regeneracji tkanek. Posługuję się terapią manualną, terapią
+								tkanek miękkich, nowoczesną fizykoterapią oraz precyzyjnie
+								dobranymi ćwiczeniami.
+							</p>
+						</div>
+					</SlideX>
+				</div>
+			</section>
 		</>
 	);
 };

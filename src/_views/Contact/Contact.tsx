@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { FACEBOOK_URL, INSTAGRAM_URL } from "../../_constants/socialMedia";
+import {
+	BOOKSY_URL,
+	FACEBOOK_URL,
+	INSTAGRAM_URL,
+} from "../../_constants/socialMedia";
 import { Header } from "../../components/Header/Header";
-import { SlideX } from "../../utils/animations/SlideX";
-import { SlideY } from "../../utils/animations/SlideY";
+import { ScaleUp } from "../../utils/animations/ScaleUp";
 
 const Map = () => (
 	<iframe
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5120.298945010764!2d18.19736239745383!3d50.08348828609741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47116805a0be8eb5%3A0xe8362cb409eec0ef!2sAkademia%20Fitness%20(Ocicka)!5e0!3m2!1sen!2spl!4v1722093596094!5m2!1sen!2spl"
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.2427380206723!2d18.20237187788332!3d50.08174201384129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47116964ea664fdd%3A0x715546ae31aef50a!2sFizjoterapeuta%20Bartosz%20Tr%C4%99bacz!5e0!3m2!1spl!2spl!4v1762259145764!5m2!1spl!2spl"
 		width="100%"
 		height="650"
 		style={{ border: 0 }}
@@ -59,26 +62,41 @@ export const Contact = () => {
 			<section className="container responsive-padding mx-auto h-full">
 				<Header title="Kontakt" />
 				<div className="h-full flex flex-col-reverse md:flex-row">
-					<SlideX from="left">
-						<div className="h-full w-full flex flex-col gap-8 mt-4 md:mt-0">
-							<p className="text-3xl">
-								Czy chcesz pozbyć się bólu i odzyskać pełną sprawność?
-								Potrzebujesz wsparcia w rehabilitacji po kontuzji? Masz pytania
-								dotyczące ćwiczeń lub terapii? Śmiało, napisz do mnie! Odpowiem
-								tak szybko, jak to możliwe i pomogę Ci wrócić do pełni zdrowia.
-							</p>
+					<div className="h-full w-full flex flex-col gap-8 mt-4 md:mt-0">
+						<p className="text-3xl">
+							Czy chcesz pozbyć się bólu i odzyskać pełną sprawność?
+							Potrzebujesz wsparcia w rehabilitacji po kontuzji? Masz pytania
+							dotyczące ćwiczeń lub terapii? Śmiało, skontaktuj się ze mną!
+							Odpowiem tak szybko, jak to możliwe i pomogę Ci wrócić do pełni
+							zdrowia.
+						</p>
 
+						<div className="flex w-full flex-col lg:flex-row lg:justify-between gap-4 pb-8">
 							<List
 								title="Dane kontaktowe:"
 								items={[
-									"Akademia Fitness",
 									"ul. Ocicka 4",
 									"47-400 Racibórz",
+									"Domofon nr 2 - 1 piętro",
 									"Numer telefonu",
 									"+ 48 515 693 553",
 								]}
 							/>
-							<SocialMedia />
+
+							<div className=" flex flex-col gap-2">
+								<h5 className="text-4xl font-semibold pb-2">
+									Umów się przez Booksy:
+								</h5>
+								<ScaleUp>
+									<a href={BOOKSY_URL}>
+										<img
+											className="rounded-lg w-64"
+											src="/assets/qrcode.png"
+											alt="Booksy QR code"
+										/>
+									</a>
+								</ScaleUp>
+							</div>
 
 							<div className="flex flex-col gap-2">
 								<h5 className="text-4xl font-semibold pb-2">Współpracuję z:</h5>
@@ -90,14 +108,8 @@ export const Contact = () => {
 								</a>
 							</div>
 						</div>
-					</SlideX>
-					{/* <ScaleUp>
-						<img
-							className="rounded-lg"
-							src="https://cdn.pixabay.com/photo/2021/05/29/01/55/physical-therapy-6292316_1280.jpg"
-							alt="Zdjęcie męzczyzny"
-						/>
-					</ScaleUp> */}
+						{/* <SocialMedia /> */}
+					</div>
 				</div>
 			</section>
 

@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import BaseSeo from "./components/BaseSeo.astro";
 import Footer from "../components/Footer/Footer";
 import Nav from "../components/Navbar/Nav.astro";
+import { FloatingIcons } from "../components/FloatingIcons/FloatingIcons";
+import { FloatingBooksy } from "../components/FloatingBooksy/FloatingBooksy";
 
 interface Props {
 	title: string;
@@ -29,6 +31,8 @@ const { title, description, keywords } = Astro.props;
 	<body>
 		<div class="min-h-screen">
 			<Nav />
+			<FloatingIcons client:load />
+			<FloatingBooksy client:load />
 			<div class="pt-[96px] min-h-screen h-full"><slot /></div>
 			<Footer client:load />
 		</div>
