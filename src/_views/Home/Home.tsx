@@ -68,13 +68,14 @@ export const Home = () => {
 	return (
 		<>
 			<main className="w-full min-h-screen h-[calc(100vh-96px)] md:min-h-full max-h-full relative">
-				<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0">
+				<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0 ">
 					<img
-						className="w-full h-auto lg:h-[55%] xl:h-[80%] object-contain z-20"
+						// className="w-full h-auto md:h-[60%] xl:h-[90%] lg:pr-32 object-contain z-20"
+						className="w-full h-auto md:h-[60%] xl:h-[90%] object-contain z-20"
 						src="assets/homepage.png"
 					/>
 				</div>
-				<div className="hidden lg:block absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
+				<div className="hidden xl:block absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
 					<motion.img
 						className="w-full z-10"
 						src="/assets/ccircle.svg"
@@ -97,7 +98,7 @@ export const Home = () => {
 						<Heading title="Trębacz" slideFrom="none" />
 					</div>
 
-					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-16 2xl:top-[40%] 2xl:right-[10%] responsive-padding">
+					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-4 2xl:top-[40%] 2xl:right-[-10%] responsive-padding">
 						<Heading title="Fizjoterapia" slideFrom="none" />
 					</div>
 
@@ -139,9 +140,16 @@ Niezależnie od tego,czy zmagasz się z bólem kręgosłupa, wracasz do formy po
 					/>
 				</div> */}
 			</main>
-			<section className="w-full h-60 shadow-lg">
-				<div className="container responsive-padding mx-auto flex justify-center items-center h-60 ">
-					<blockquote className="text-xl md:text-3xl xl:text-4xl">
+			<section className="w-full h-60 bg-gray-200">
+				<div className="relative container responsive-padding mx-auto flex justify-center items-center h-60 ">
+					<svg
+						className="absolute top-4 left-4 md:top-8 md:left-8 w-12 h-12 text-primary"
+						fill="currentColor"
+						viewBox="0 0 32 32"
+					>
+						<path d="M10 8c-3.3 0-6 2.7-6 6s2.7 6 6 6c1.4 0 2.7-.5 3.7-1.3-.3 2.8-2.7 5.3-5.7 5.3v4c5.5 0 10-4.5 10-10V8h-8zm16 0c-3.3 0-6 2.7-6 6s2.7 6 6 6c1.4 0 2.7-.5 3.7-1.3-.3 2.8-2.7 5.3-5.7 5.3v4c5.5 0 10-4.5 10-10V8h-8z" />
+					</svg>
+					<blockquote className="text-3xl md:text-3xl xl:text-4xl">
 						Każdy pacjent jest inny - dlatego każda terapia jest dopasowana do
 						Ciebie.
 					</blockquote>
