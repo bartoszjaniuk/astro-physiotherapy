@@ -70,7 +70,6 @@ export const Home = () => {
 			<main className="w-full min-h-screen h-[calc(100vh-96px)] md:min-h-full max-h-full relative">
 				<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0 ">
 					<img
-						// className="w-full h-auto md:h-[60%] xl:h-[90%] lg:pr-32 object-contain z-20"
 						className="w-full h-auto md:h-[60%] xl:h-[90%] object-contain z-20"
 						src="assets/homepage.png"
 					/>
@@ -98,37 +97,33 @@ export const Home = () => {
 						<Heading title="Trębacz" slideFrom="none" />
 					</div>
 
-					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-4 2xl:top-[40%] 2xl:right-[-10%] responsive-padding">
+					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-4 2xl:top-[40%] 2xl:right-[-5%] responsive-padding">
 						<Heading title="Fizjoterapia" slideFrom="none" />
 					</div>
 
-					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10">
+					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10 flex flex-col gap-8">
 						<ScaleUp>
 							<Description
 								text="Nasze podejście łączy nowoczesną wiedzę medyczną, doświadczenie kliniczne oraz indywidualne podejście do każdego pacjenta.
 Niezależnie od tego,czy zmagasz się z bólem kręgosłupa, wracasz do formy po kontuzji, czy potrzebujesz specjalistycznej terapii - jesteśmy tu, by Ci pomóc."
 							/>
 						</ScaleUp>
-					</div>
 
-					<motion.div
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.95 }}
-						className="absolute hidden bg-transparent w-56 md:block md:bottom-64 md:right-4 lg:w-80 xl:w-56 xl:left-4 xl:bottom-16 2xl:w-60 2xl:bottom-32 z-50 cursor-pointer "
-					>
-						<ScaleUp>
-							<motion.a href={BOOKSY_URL}>
-								<img
-									className="w-full h-auto bg-transparent z-50"
-									src={`assets/${
-										screenBreakpoint === "md" || screenBreakpoint === "lg"
-											? "napiszdomniertl"
-											: "napiszdomnieltr"
-									}.png`}
-								/>
-							</motion.a>
-						</ScaleUp>
-					</motion.div>
+						<motion.div
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+							className="hidden bg-transparent w-56 md:block lg:w-80 xl:w-56 2xl:w-60 z-50 cursor-pointer "
+						>
+							<ScaleUp>
+								<motion.a href={BOOKSY_URL}>
+									<img
+										className="w-full h-auto bg-transparent z-50"
+										src={`assets/napiszdomnieltr.png`}
+									/>
+								</motion.a>
+							</ScaleUp>
+						</motion.div>
+					</div>
 				</div>
 				{/* <div className="hidden xl:block absolute bottom-[20%] right-[20%] z-50">
 					<ScrollDown
