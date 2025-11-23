@@ -67,8 +67,8 @@ export const Home = () => {
 
 	return (
 		<>
-			<main className="w-full min-h-screen h-[calc(100vh-96px)] md:min-h-full max-h-full relative">
-				<div className="h-full w-full flex items-end lg:pl-32 z-10 sm:pt-0 ">
+			<main className="w-full md:h-[calc(100vh-96px)] md:min-h-full max-h-full relative">
+				<div className="hidden h-full w-full md:flex items-end lg:pl-32 z-10 sm:pt-0">
 					<img
 						className="w-full h-auto md:h-[60%] xl:h-[90%] object-contain z-20"
 						src="assets/homepage.png"
@@ -92,7 +92,7 @@ export const Home = () => {
 					/>
 				</div> */}
 
-				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent flex flex-col gap-4 md:block">
+				<div className="container mx-auto h-full w-full md:absolute md:top-0 md:left-0 md:right-0 bg-transparent flex flex-col gap-4 md:block">
 					<div className=" bg-transparent relative md:absolute lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[15%] responsive-padding">
 						<Heading title="Trębacz" slideFrom="none" />
 					</div>
@@ -123,6 +123,13 @@ Niezależnie od tego,czy zmagasz się z bólem kręgosłupa, wracasz do formy po
 								</motion.a>
 							</ScaleUp>
 						</motion.div>
+					</div>
+
+					<div className="h-full w-full flex items-end z-10 md:hidden">
+						<img
+							className="w-full h-auto md:h-[60%] xl:h-[90%] object-contain z-20"
+							src="assets/homepage.png"
+						/>
 					</div>
 				</div>
 				{/* <div className="hidden xl:block absolute bottom-[20%] right-[20%] z-50">
