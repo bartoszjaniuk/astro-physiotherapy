@@ -74,7 +74,7 @@ export const Home = () => {
 						src="assets/homepage.png"
 					/>
 				</div>
-				<div className="hidden xl:block absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
+				{/* <div className="hidden xl:block absolute top-96 w-5/6 left-0 right-0 mx-auto h-full md:w-[700px] lg:-right-96 lg:mx-0 lg:left-auto">
 					<motion.img
 						className="w-full z-10"
 						src="/assets/ccircle.svg"
@@ -90,18 +90,18 @@ export const Home = () => {
 							repeatType: "loop",
 						}}
 					/>
-				</div>
+				</div> */}
 
-				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent ">
-					<div className="bg-transparent absolute top-5 left-5 lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[25%] responsive-padding">
+				<div className="container mx-auto h-full w-full absolute top-0 left-0 right-0 bg-transparent flex flex-col gap-4 md:block">
+					<div className=" bg-transparent relative md:absolute lg:left-16 xl:left-0 xl:top-[10%] 2xl:top-[15%] responsive-padding">
 						<Heading title="Trębacz" slideFrom="none" />
 					</div>
 
-					<div className="bg-transparent absolute top-28 right-5 md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-4 2xl:top-[40%] 2xl:right-[-5%] responsive-padding">
+					<div className="bg-transparent  relative md:absolute  md:right-0 md:top-[13%] lg:right-16 xl:top-[35%] xl:right-4 2xl:top-[40%] 2xl:right-[-5%] responsive-padding">
 						<Heading title="Fizjoterapia" slideFrom="none" />
 					</div>
 
-					<div className="bg-transparent absolute w-full top-52 md:top-80 lg:top-[30%] xl:w-96 2xl:top-[40%] responsive-padding z-10 flex flex-col gap-8">
+					<div className="bg-transparent relative md:absolute w-full md:top-80 lg:top-[30%] xl:w-96 2xl:top-[35%] responsive-padding z-10 flex flex-col gap-8">
 						<ScaleUp>
 							<Description
 								text="Nasze podejście łączy nowoczesną wiedzę medyczną, doświadczenie kliniczne oraz indywidualne podejście do każdego pacjenta.
